@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Form</title>
+</head>
+
+<body>
+    <form>
+        <center>
+            <h2>Registration form</h2>
+            <div>
+                <label for="Name"><b>Name: </b></label>
+                <input type="text" placeholder="Enter Name" name="name" id="name" required /><br />
+
+                <label for="email"><b>Email: </b></label>
+                <input type="text" placeholder="Enter Email" name="email" id="email" required /><br />
+
+                <label for="qualification"><b>Qualification: </b></label>
+                <input type="text" name="qualification" id="qualification" placeholder="qualification" required /><br />
+
+                <label for="age"><b>Age: </b></label>
+                <input type="number" name="age" id="age" placeholder="age" required /><br />
+
+                <div id="result"></div>
+                <button type="submit" id="registerbtn">Submit</button><br />
+            </div>
+        </center>
+    </form>
+    <script>
+        document.getElementById("registerbtn").addEventListener("click", function (event) {
+            event.preventDefault()
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let qualification = document.getElementById("qualification").value;
+            let age = document.getElementById("age").value;
+            document.getElementById(
+                "result"
+            ).innerHTML = `Submitted Data: <br> <b>Name: </b>${name}<br>` +
+            `<b>Age: </b>${age}<br>` +
+            `<b>Email: </b>${email}<br>` +
+                `<b>Qualification: </b>${qualification}`;
+        });
+    </script>
+</body>
+
+</html>
